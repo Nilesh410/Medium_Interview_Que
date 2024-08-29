@@ -1,0 +1,20 @@
+Que:- How does JavaScript’s event delegation work?
+Answer: Event delegation involves attaching a single event listener to a parent element to manage 
+events for its child elements. This improves performance and simplifies event handling.
+// Select the parent element
+const itemList = document.getElementById('item-list');
+
+// Attach a single event listener to the parent
+itemList.addEventListener('click', function(event) {
+    // Check if a list item was clicked
+    if (event.target.tagName === 'LI') {
+        alert('Item clicked: ' + event.target.textContent);
+    }
+});
+Only one listener is attached to the ul, even if more li elements are added later.
+
+Que:- Explain closures and how they can be used in JavaScript.
+Answer: A closure is the combination of a function bundled together (enclosed) with references
+ to its surrounding state (the lexical environment). 
+In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, 
+closures are created every time a function is created, at function creation time.

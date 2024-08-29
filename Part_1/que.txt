@@ -18,3 +18,32 @@ Answer: A closure is the combination of a function bundled together (enclosed) w
  to its surrounding state (the lexical environment). 
 In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, 
 closures are created every time a function is created, at function creation time.
+
+Que:- 4. What are JavaScript Promises, and how do they differ from callbacks?
+Answer: Promises represent asynchronous operations and provide a cleaner, 
+more manageable way to handle asynchronous code compared to callbacks, which can lead to “callback hell.”
+function fetchData(callback) {
+    setTimeout(() => {
+        callback('Data received');
+    }, 1000);
+}
+
+fetchData((data) => {
+    console.log(data); // Output: Data received
+});
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Data received');
+        }, 1000);
+    });
+}
+
+fetchData().then((data) => {
+    console.log(data); // Output: Data received
+});
+
+Que-5. What is the this keyword, and how does its value change in different contexts?
+Answer: The this keyword refers to the context in which a function is called. 
+Its value changes depending on how the function is invoked, such as in global scope, 
+object methods, or event handlers.
